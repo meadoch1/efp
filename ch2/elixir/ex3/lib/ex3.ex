@@ -18,8 +18,15 @@ defmodule Ex3 do
       %{ name: "Patrick Henry", quote: "Give me liberty or give me death!" },
     ]
 
-    printit = fn(name, qt) -> IO.puts name <> " says, \"" <> qt <> "\"" end
-    for %{name: name, quote: qt} <- quotes, do: printit.(name, qt)
+    print(quotes)
+  end
+
+  defp print([]) do
+  end
+
+  defp print([%{name: name, quote: quote} | tail]) do
+    IO.puts name <> " says, \"" <> quote <> "\""
+    print(tail)
   end
 
   def process([]) do
