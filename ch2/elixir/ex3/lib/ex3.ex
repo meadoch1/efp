@@ -26,7 +26,7 @@ defmodule Ex3 do
     IO.puts "Please supply an argument for what step to run."
   end
 
-  def prmopt(question) do
+  def prompt(question) do
     IO.puts question
     IO.read(:line) |> String.rstrip
   end

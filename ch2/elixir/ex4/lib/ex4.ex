@@ -11,17 +11,6 @@ defmodule Ex4 do
     |> show_result
   end
 
-  def process([ex: 2]) do
-    quotes = [
-      %{ name: "John Wayne", quote: "Reach for the sky pilgrim." },
-      %{ name: "Obi-Wan Kinobi", quote: "These are not the droids you are looking for." },
-      %{ name: "Patrick Henry", quote: "Give me liberty or give me death!" },
-    ]
-
-    printit = fn(name, qt) -> IO.puts name <> " says, \"" <> qt <> "\"" end
-    for %{name: name, quote: qt} <- quotes, do: printit.(name, qt)
-  end
-
   def process([]) do
     IO.puts "Please supply an argument for what step to run."
   end
